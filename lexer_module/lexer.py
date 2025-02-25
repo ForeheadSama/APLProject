@@ -172,6 +172,7 @@ class LexerError(Exception):
         self.message = message
         self.line = line
         self.value = value
+        
         # Format error message with context if value is provided
         msg = f"{message} at line {line}"
         if value:

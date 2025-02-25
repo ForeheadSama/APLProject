@@ -5,12 +5,12 @@ $$ Basic variable declarations
 int maxSeats = 100.
 float ticketPrice = 299.99.
 string flightNumber = "FL123".
-bool isInternational = True.
+bool isInternational = true.
 date departureDate = "2024-05-15".
 time departureTime = "10:30:00".
 
 $$ Function to calculate total price with tax
-function float calculateTotalPrice(float basePrice, float taxRate) [
+function float calculateTotalPrice(float basePrice, float taxRate)[ 
     float taxAmount = basePrice * taxRate.
     return basePrice + taxAmount.
 ]
@@ -18,9 +18,9 @@ function float calculateTotalPrice(float basePrice, float taxRate) [
 $$ Function to check seat availability
 function bool checkAvailability(int requestedSeats) [
     if (requestedSeats <= maxSeats) [
-        return True.
+        return true.
     ] else [
-        return False.
+        return false.
     ]
 ]
 
@@ -43,10 +43,10 @@ function bool processBooking(string passengerName, int seatCount) [
         reg(userId, "defaultPass").
         maxSeats = maxSeats - seatCount.
         displayConfirmation(passengerName, flightNumber).
-        return True.
+        return true.
     ] else [
         display("Booking failed - not enough seats").
-        return False.
+        return false.
     ]
 ]
 
